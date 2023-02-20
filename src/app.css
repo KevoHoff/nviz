@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap');
+
+@tailwind base;
+
+@layer base {
+    h1 {
+      @apply text-2xl;
+    }
+    h2 {
+      @apply text-xl;
+    }
+    h3 {
+      @apply text-lg;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .w-canvas {
+    width: min(85rem, 90%);
+  }
+
+  .w-lg {
+    width: min(80rem, 90%);
+  }
+
+  .w-md {
+    width: min(64rem, 90%);
+  }
+
+  .w-sm {
+    width: min(48rem, 90%);
+  }
+
+  .h-canvas {
+    height: max(30rem, 80vh)
+  }
+
+  .grid-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+:root {
+  /* Color Pallete */
+  --clr-primary: 90, 74, 227;
+  --clr-secondary: 255, 94, 91;
+  --clr-light: 239, 239, 239;
+  --clr-dark: 12, 17, 29;
+  --clr-accent: 126, 114, 233;
+  --clr-neutral: 92, 111, 104;
+
+  /* Shadows */
+  --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+*, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+  background: -moz-linear-gradient(to bottom right, rgba(204,204,204,0.34) 0%, rgba(204,204,204,0.1) 100%);
+  background: -webkit-linear-gradient(to bottom right, rgba(204,204,204,0.34) 0%, rgba(204,204,204,0.1) 100%);
+  background: linear-gradient(to bottom right, rgba(204,204,204,0.34) 0%, rgba(204,204,204,0.1) 100%);
+}
