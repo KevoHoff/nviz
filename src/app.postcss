@@ -1,0 +1,16 @@
+/*place global styles here */
+html, body { @apply h-full overflow-hidden bg-surface-50-900-token; }
+@font-face {
+	font-family: 'Quicksand';
+	src: url('/fonts/Quicksand.ttf');
+	font-display: swap;
+}
+
+
+.gradient-heading {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color Stops */
+	@apply from-surface-500 to-success-500;
+}
