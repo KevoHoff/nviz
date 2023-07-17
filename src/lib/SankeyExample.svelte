@@ -1,19 +1,45 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { Network } from "$lib/Network";
 
-    export let net: any;
+    let nodes = [
+        '# of cookies',
+        'Work',
+        'Happiness'
+    ]
 
-    $: updatePlot(net)
+    let comments: string[] = [
+        'As you eat more cookies,<br>you tend to feel more happy!',
+        'With that new assignment, <br>you have less time eat cookies. <br>This leaves you feeling less happy :('
+    ]
 
-    var data = [{}];
-    let n: any;
-    let plotData = {
-        source: [],
-        target: [],
-        value: [],
-        color: []
-    }
+    var data = [{
+            type: "sankey",
+            orientation: "h",
+            textfont: {
+                color: "black"
+            },
+            node: {
+                line: {
+                    color: "black",
+                    width: 0.5,
+                },
+                label: nodes,
+                hovertemplate: '%{label}'
+            },
+            link: {
+                source: [0,1],
+                target: [2,2],
+                value: [2,1],
+                customdata: comments,
+                color: ['#00FF0055', '#FF000055'],
+                hovertemplate: '%{customdata}',
+                hoverlabel: {
+                    'align': "left"
+                }
+            },
+            arrangement: 'snap',
+        }];
+
 
     var layout = {
         title: "Network Visualizer",
@@ -27,54 +53,7 @@
         paper_bgcolor: '#00000000'
     }
 
-    function updatePlot(net) {
-        if (net?.weights.length > 0 && n !== undefined) {
-            n.set_links();
-            plotData = n.get_plot_info();
-
-            data[0].node.label = plotData.label;
-            data[0].link.source = plotData.source;
-            data[0].link.target = plotData.target;
-            data[0].link.value = plotData.value;
-            data[0].link.color = plotData.color;
-
-            Plotly.redraw('sankey')
-        }
-    }
-
-
     onMount(() => {
-        console.log(net);
-        n = new Network(net);
-        n.set_links();
-        plotData = n.get_plot_info();
-        // console.log(nodes);
-
-        data[0] = {
-            type: "sankey",
-            orientation: "h",
-            textfont: {
-                color: "black"
-            },
-            node: {
-                // pad: 15,
-                // thickness: 30,
-                line: {
-                    color: "black",
-                    width: 0.5,
-                },
-                label: plotData.label,
-            },
-            link: {
-                source: plotData.source,
-                target: plotData.target,
-                value: plotData.value,
-                color: plotData.color
-            },
-            arrangement: 'snap'
-        }
-
-
         Plotly.react('sankey', data, layout, {responsive: true})
     }) 
 </script>

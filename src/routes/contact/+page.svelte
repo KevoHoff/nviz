@@ -9,10 +9,12 @@
     }
 </script>
 
-<AppShell class="bg-surface-100-800-token">
+<AppShell class="bg-surface-50-900-token">
 	<svelte:fragment slot="header">
 		<AppBar background="bg-surface-200-700-token"  shadow="shadow-xl">
-			<svelte:fragment slot="lead"><img class="h-24" src="logo1.png" alt="NVIZ"></svelte:fragment>
+			<svelte:fragment slot="lead">
+				<a href="/"><img class="h-10" src="logo1.svg" alt="NVIZ"></a>
+			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<ul class="flex gap-4">
 					<li><LightSwitch /></li>
@@ -28,7 +30,7 @@
         <p class="w-full">Have any improvements you would like to suggest? Comments or concerns? Please send them our way and we will get back to you within 2 business days.</p>
         <form action="/contact?/submit" class="w-full flex flex-col justify-center items-center gap-1" method="POST">
             <label for="name" class="label my-1 w-full">
-                <span>First</span>
+                <span>Full name</span>
                 <input class="input" type="text" name="name" placeholder="Full name" required/>
             </label>
             <label for="email" class="label my-1 w-full">
@@ -43,7 +45,3 @@
         </form>
 	</div>
 </AppShell>
-
-<style>
-
-</style>

@@ -205,7 +205,9 @@
 		<svelte:fragment slot="header">Customize Your Model</svelte:fragment>
 		<form action="" class="bg-surface-200-700-token p-4 rounded-lg">
 			<div class="space-y-2 w-fit">
-				<label for="model-type">Model goal</label>
+				<label for="model-type" class="w-full">
+					<p>Model goal</p>
+				</label>
 				<label class="flex items-center space-x-2" use:popup={popupHoverRegression}>
 					<input class="radio" type="radio" checked name="model-type" value="regression" bind:group={model_type}/>
 					<p>Regression</p>

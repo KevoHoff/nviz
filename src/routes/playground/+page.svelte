@@ -21,21 +21,21 @@
 		for (let header of trash) {
 			df.pop(header);
 		}
-
-		console.log(df)
 	}
 </script>
 
 <AppShell>
 	<svelte:fragment slot="header">
-		<AppBar background="bg-surface-200-700-token" shadow="shadow-xl">
-			<svelte:fragment slot="lead"><img class="w-24" src="logo.png" alt="Logo" srcset=""></svelte:fragment>
+		<AppBar background="bg-surface-200-700-token"  shadow="shadow-xl">
+			<svelte:fragment slot="lead">
+				<a href="/"><img class="h-10" src="logo1.svg" alt="NVIZ"></a>
+			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<ul class="flex gap-4">
 					<li><LightSwitch /></li>
 					<li><a class="decoration-primary-500 decoration-2 underline-offset-8 hover:underline" href='/'>Home</a></li>
 					<li><a class="decoration-primary-400 decoration-2 underline-offset-8 underline" href='/playground'>Playground</a></li>
-					<li><a class="decoration-primary-500 decoration-2 underline-offset-8 hover:underline" href='/'>Contact</a></li>
+					<li><a class="decoration-primary-500 decoration-2 underline-offset-8 hover:underline" href='/contact'>Contact</a></li>
 				</ul>
 			</svelte:fragment>
 		</AppBar>
@@ -50,15 +50,15 @@
 			<div class="w-full h-full bg-surface-50-900-token border-e-2 border-primary-200-700-token">
 				<ul>
 					<li>
-						<button on:click={() => {tab = 0;}} class:bg-primary-300-600-token={tab === 0} class:hover:bg-surface-100-800-token={tab !==0 } class="flex justify-center flex-col items-center border border-black p-4 border-primary-200-700-token hover:bg-surface-100-800-token w-full">
+						<button on:click={() => {tab = 0}} class:bg-primary-300-600-token={tab === 0} class:hover:bg-surface-100-800-token={tab !==0 } class="flex justify-center flex-col items-center border border-black p-4 border-primary-200-700-token hover:bg-surface-100-800-token w-full">
 							<svg class="dark:fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18.799 7.038c-.496-.535-.799-1.252-.799-2.038 0-1.656 1.344-3 3-3s3 1.344 3 3-1.344 3-3 3c-.146 0-.29-.01-.431-.031l-3.333 6.032c.475.53.764 1.231.764 1.999 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-.583.167-1.127.455-1.587l-2.565-3.547c-.281.087-.58.134-.89.134l-.368-.022-3.355 6.069c.451.525.723 1.208.723 1.953 0 1.656-1.344 3-3 3s-3-1.344-3-3 1.344-3 3-3c.186 0 .367.017.543.049l3.298-5.967c-.52-.539-.841-1.273-.841-2.082 0-1.656 1.344-3 3-3s3 1.344 3 3c0 .617-.187 1.191-.507 1.669l2.527 3.495c.307-.106.637-.164.98-.164.164 0 .325.013.482.039l3.317-6.001zm-3.799 7.962c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zm-6-8c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z"/></svg>
-							<p>Visual</p>
+							<p>Model</p>
 						</button>
 					</li>
 					<li>
 						<button on:click={() => {tab = 1}} class:bg-primary-300-600-token={tab === 1} class:hover:bg-surface-100-800-token={tab !==1 } class="flex justify-center flex-col items-center border border-black p-4 border-primary-200-700-token hover:bg-surface-100-800-token w-full">
 							<svg class="dark:fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 2c5.52 0 10 4.481 10 10 0 5.52-4.48 10-10 10-5.519 0-10-4.48-10-10 0-5.519 4.481-10 10-10zm-2 2.252v1.038c-2.89.862-5 3.542-5 6.71 0 3.863 3.137 7 7 7 1.932 0 3.682-.784 4.949-2.051l.706.706c-1.448 1.449-3.448 2.345-5.655 2.345-4.416 0-8-3.585-8-8 0-3.725 2.551-6.859 6-7.748zm0 3.165v1.119c-1.195.692-2 1.984-2 3.464 0 2.208 1.792 4 4 4 1.104 0 2.104-.448 2.828-1.172l.707.707c-.905.904-2.155 1.465-3.535 1.465-2.76 0-5-2.24-5-5 0-2.049 1.235-3.811 3-4.583zm1 2.851v-6.268c0-.265.105-.52.293-.707.187-.188.442-.293.707-.293.265 0 .52.105.707.293.188.187.293.442.293.707v6.268c.598.346 1 .992 1 1.732 0 1.104-.896 2-2 2s-2-.896-2-2c0-.74.402-1.386 1-1.732z"/></svg>
-							<p>Track</p>
+							<p>Stats</p>
 						</button>
 					</li>
 					<li>
