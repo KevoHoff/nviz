@@ -1,5 +1,5 @@
 <script>
-	import { AppShell, AppBar, Accordion, AccordionItem, LightSwitch} from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar} from '@skeletonlabs/skeleton';
 
     let isValidEmail = false;
 
@@ -11,13 +11,12 @@
 
 <AppShell class="bg-surface-50-900-token">
 	<svelte:fragment slot="header">
-		<AppBar background="bg-surface-200-700-token"  shadow="shadow-xl">
+		<AppBar background="bg-surface-200-700-token"  shadow="shadow-md">
 			<svelte:fragment slot="lead">
-				<a href="/"><img class="h-10" src="logo1.svg" alt="NVIZ"></a>
+				<a href="/"><img class="h-10" src="logo-icon.svg" alt="NVIZ"></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<ul class="flex gap-4">
-					<li><LightSwitch /></li>
 					<li><a class="decoration-primary-500 decoration-2 underline-offset-8 hover:underline" href='/'>Home</a></li>
 					<li><a class="decoration-primary-500 decoration-2 underline-offset-8 hover:underline" href='/playground'>Playground</a></li>
 					<li><a class="decoration-primary-400 decoration-2 underline-offset-8 underline" href='/contact'>Contact</a></li>

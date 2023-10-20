@@ -1,6 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
+    export let onSankeyLoad = false;
+
     let nodes = [
         '# of cookies',
         'Work',
@@ -55,6 +57,8 @@
 
     onMount(() => {
         Plotly.react('sankey', data, layout, {responsive: true})
+        onSankeyLoad = true;
+        console.log(onSankeyLoad);
     }) 
 </script>
 
