@@ -21,7 +21,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/nviz'
+          BASE_PATH: '/kevohoff.github.io/nviz'
         run: |
           npm run build
           
