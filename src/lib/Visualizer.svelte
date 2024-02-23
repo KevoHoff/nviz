@@ -53,9 +53,9 @@
     })
 </script>
 
-<div class="w-full h-full flex gap-4">
-    <div class="flex flex-col justify-around bg-surface-50-900-token border-primary-200-700-token">
-        <ul>
+<div class="w-full h-screen flex md:flex-row flex-col gap-4">
+    <div class="flex flex-none md:flex-col flex-row justify-around bg-surface-50-900-token border-primary-200-700-token">
+        <ul class="flex md:flex-col flex-row">
             <li>
                 <button on:click={() => {tab = 0}} class:bg-primary-300-600-token={tab === 0} class:hover:bg-surface-100-800-token={tab !==0 } class="flex m-2 justify-center flex-col items-center shadow rounded-full p-3 hover:bg-surface-100-800-token">
                     <svg class="dark:fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18.799 7.038c-.496-.535-.799-1.252-.799-2.038 0-1.656 1.344-3 3-3s3 1.344 3 3-1.344 3-3 3c-.146 0-.29-.01-.431-.031l-3.333 6.032c.475.53.764 1.231.764 1.999 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-.583.167-1.127.455-1.587l-2.565-3.547c-.281.087-.58.134-.89.134l-.368-.022-3.355 6.069c.451.525.723 1.208.723 1.953 0 1.656-1.344 3-3 3s-3-1.344-3-3 1.344-3 3-3c.186 0 .367.017.543.049l3.298-5.967c-.52-.539-.841-1.273-.841-2.082 0-1.656 1.344-3 3-3s3 1.344 3 3c0 .617-.187 1.191-.507 1.669l2.527 3.495c.307-.106.637-.164.98-.164.164 0 .325.013.482.039l3.317-6.001zm-3.799 7.962c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zm-6-8c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z"/></svg>
@@ -87,12 +87,12 @@
             {/if}
         {/if}
     </div>
-    <div class="flex-none flex justify-center flex-col h-full gap-2">
-        <div class="bg-surface-200-700-token shadow rounded-lg p-4">
+    <div class="flex-none flex justify-center md:flex-col flex-row h-full gap-2">
+        <div class="bg-surface-200-700-token shadow rounded-lg p-4 h-fit md:block hidden">
             <p>Epoch: {elapsed_epochs}</p>
             <p>Error: {elapsed_error.toFixed(4)}</p>
         </div>
-        <button class="btn variant-filled-primary text-white h-fit" on:click={handleClick}>
+        <button class="btn variant-filled-primary text-white h-fit md:w-fit w-full" on:click={handleClick}>
                 {#await promise}
                     <!-- <ProgressRadial stroke={100} width="w-6" meter="stroke-primary-400" track="stroke-primary-500"/> -->
                     <p>...waiting</p>

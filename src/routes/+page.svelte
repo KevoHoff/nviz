@@ -5,7 +5,7 @@
 	let onSankeyLoad = false;
 </script>
 
-<div class="h-full container mx-auto pb-16">
+<div class="h-full container mx-auto pb-16 px-2">
 	<div class="h-screen flex flex-col justify-center items-center gap-8">
 		<div class="w-full grid md:grid-cols-2 place-tiems-center gap-4 justify-center items-center">
 			<div class="space-y-5 text-center md:text-right text-primary-800">
@@ -44,7 +44,7 @@
 			</AccordionItem>
 		</Accordion>
 		<h3 class="h3 text-3xl font-bold mt-24 text-primary-800">Features</h3>
-		<div class="grid grid-cols-3 w-full gap-4">
+		<div class="grid sm:grid-cols-3 grid-cols-2 w-full gap-4">
 			<div class="flex flex-col justify-center text-center items-center cols-span-1 p-4 rounded-md shadow-md bg-surface-50-900-token">
 				<h4 class="h4 font-semibold">Upload Data</h4>
 				<img class="m-2" src="upload-icon.svg" alt="Upload">
