@@ -24,7 +24,7 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: ''
+          BASE_PATH: 'nviz'
         run: |
           npm run build
           
