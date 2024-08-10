@@ -1,6 +1,7 @@
 <script>
 	import SankeyExample from '$lib/SankeyExample.svelte';
 	import { AppShell, AppBar, Accordion, AccordionItem, LightSwitch} from '@skeletonlabs/skeleton';
+	import { base } from '$app/paths';
 
 	let onSankeyLoad = false;
 </script>
@@ -16,7 +17,7 @@
 		</div>
 		
 		<div class="w-full col-span-5 grid justify-center">
-			<a href="/playground" class="btn variant-filled-primary text-surface-500"><span>Get Started →</span></a>
+			<a href="{base}/playground" class="btn variant-filled-primary text-surface-500"><span>Get Started →</span></a>
 		</div>
 	</div>
 	<div class="h-fit mx-auto max-w-3xl flex flex-col justify-center items-center gap-8">	
