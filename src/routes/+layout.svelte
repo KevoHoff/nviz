@@ -19,7 +19,7 @@
 	<svelte:fragment slot="header">
 		<AppBar background="bg-surface-50-900-token"  shadow="shadow-sm">
 			<svelte:fragment slot="lead">
-				<a href="{base}/"><img class="h-10" src="../logo-icon.svg" alt="NVIZ"></a>
+				<a href="{base}/"><img class="h-10" src="{base}/logo-icon.svg" alt="NVIZ"></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<ul class="flex gap-4 max-w-content">
